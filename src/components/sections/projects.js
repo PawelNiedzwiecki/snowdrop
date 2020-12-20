@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useRef, useContext } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
-import VisibilitySensor from "react-visibility-sensor"
-import { motion } from "framer-motion"
+import React, { useState, useEffect, useRef, useContext } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Img from 'gatsby-image'
+import VisibilitySensor from 'react-visibility-sensor'
+import { motion } from 'framer-motion'
 
-import { useOnScreen } from "../../hooks"
-import Context from "../../context"
-import ContentWrapper from "../../styles/contentWrapper"
-import Underlining from "../../styles/underlining"
-import Button from "../../styles/button"
-import Icon from "../../components/icons"
-import { lightTheme, darkTheme } from "../../styles/theme"
+import { useOnScreen } from '../../hooks'
+import Context from '../../context'
+import ContentWrapper from '../../styles/contentWrapper'
+import Underlining from '../../styles/underlining'
+import Button from '../../styles/button'
+import Icon from '../../components/icons'
+import { lightTheme, darkTheme } from '../../styles/theme'
 
 const StyledSection = styled.section`
   width: 100%;
@@ -128,7 +128,7 @@ const StyledProject = styled(motion.div)`
     padding-right: 0;
     /* Positioning of image and details should vary */
     flex-direction: ${({ position }) =>
-      position % 2 !== 0 ? "row" : "row-reverse"};
+      position % 2 !== 0 ? 'row' : 'row-reverse'};
   }
   .details {
     width: 100%;
@@ -212,7 +212,7 @@ const Projects = ({ content }) => {
   // instead they use react-visibility-sensor, therefore their visibility
   // is also stored differently
   const [onScreen, setOnScreen] = useState({})
-  const handleOnScreen = el => {
+  const handleOnScreen = (el) => {
     if (!onScreen[el]) {
       const updatedOnScreen = { ...onScreen }
       updatedOnScreen[el] = true
@@ -231,7 +231,7 @@ const Projects = ({ content }) => {
     // required for animations: set visibility for all projects to
     // "false" initially
     let initial = {}
-    projects.forEach(project => {
+    projects.forEach((project) => {
       initial[project.node.frontmatter.position] = false
     })
     setOnScreen(initial)
@@ -260,7 +260,7 @@ const Projects = ({ content }) => {
         <motion.div
           ref={tRef}
           variants={tVariants}
-          animate={tOnScreen ? "visible" : "hidden"}
+          animate={tOnScreen ? 'visible' : 'hidden'}
         >
           <h3 className="section-title">{sectionDetails.frontmatter.title}</h3>
           <div className="counter">
@@ -268,7 +268,7 @@ const Projects = ({ content }) => {
           </div>
         </motion.div>
         <div className="projects">
-          {projects.map(project => {
+          {projects.map((project) => {
             const { body, frontmatter } = project.node
             return (
               <VisibilitySensor
@@ -281,7 +281,7 @@ const Projects = ({ content }) => {
                   position={frontmatter.position}
                   variants={pVariants}
                   animate={
-                    onScreen[frontmatter.position] ? "visible" : "hidden"
+                    onScreen[frontmatter.position] ? 'visible' : 'hidden'
                   }
                 >
                   <div className="details">
@@ -291,7 +291,7 @@ const Projects = ({ content }) => {
                     <div className="title">{frontmatter.title}</div>
                     <MDXRenderer>{body}</MDXRenderer>
                     <div className="tags">
-                      {frontmatter.tags.map(tag => (
+                      {frontmatter.tags.map((tag) => (
                         <Underlining key={tag} highlight>
                           {tag}
                         </Underlining>
@@ -353,7 +353,7 @@ const Projects = ({ content }) => {
         <motion.a
           ref={bRef}
           variants={bVariants}
-          animate={bOnScreen ? "visible" : "hidden"}
+          animate={bOnScreen ? 'visible' : 'hidden'}
           className="cta-btn"
           href={sectionDetails.frontmatter.buttonUrl}
           target="_blank"

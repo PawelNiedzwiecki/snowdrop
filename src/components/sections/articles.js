@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext } from "react"
-import styled from "styled-components"
-import SkeletonLoader from "tiny-skeleton-loader-react"
-import { motion, useAnimation } from "framer-motion"
+import React, { useState, useEffect, useContext } from 'react'
+import styled from 'styled-components'
+import SkeletonLoader from 'tiny-skeleton-loader-react'
+import { motion, useAnimation } from 'framer-motion'
 
-import Context from "../../context"
-import ContentWrapper from "../../styles/contentWrapper"
-import Underlining from "../../styles/underlining"
-import { parseDate } from "../../utils"
-import { mediumRssFeed, shownArticles } from "../../../config"
+import Context from '../../context'
+import ContentWrapper from '../../styles/contentWrapper'
+import Underlining from '../../styles/underlining'
+import { parseDate } from '../../utils'
+import { mediumRssFeed, shownArticles } from '../../../config'
 // import { rssFeed, shownArticles } from "../../../config"
-import { lightTheme, darkTheme } from "../../styles/theme"
+import { lightTheme, darkTheme } from '../../styles/theme'
 
 const StyledSection = motion.custom(styled.section`
   width: 100%;
@@ -129,15 +129,17 @@ const Articles = () => {
           y: 0,
           transition: { delay: 1 },
         })
-        fetch(mediumRssFeed, { headers: { Accept: "application/json" } })
+        fetch(mediumRssFeed, { headers: { Accept: 'application/json' } })
           // fetch(rssFeed, { headers: { Accept: "application/json" } })
-          .then(res => res.json())
+          .then((res) => res.json())
           // Feed also contains comments, therefore we filter for articles only
-          .then(data => data.items.filter(item => item.categories.length > 0))
+          .then((data) =>
+            data.items.filter((item) => item.categories.length > 0)
+          )
           // .then(data => data.items.filter(item => item.title.length > 0))
-          .then(newArticles => newArticles.slice(0, MAX_ARTICLES))
-          .then(articles => setArticles(articles))
-          .catch(error => console.log(error))
+          .then((newArticles) => newArticles.slice(0, MAX_ARTICLES))
+          .then((articles) => setArticles(articles))
+          .catch((error) => console.log(error))
       }
     }
     loadArticles()
@@ -153,7 +155,7 @@ const Articles = () => {
         <h3 className="section-title">Latest Articles</h3>
         <div className="articles">
           {articles
-            ? articles.map(item => (
+            ? articles.map((item) => (
                 <a
                   href={item.link}
                   target="_blank"
@@ -177,7 +179,7 @@ const Articles = () => {
                 <div className="card" key={key}>
                   <SkeletonLoader
                     height="1.5rem"
-                    style={{ marginBottom: ".5rem" }}
+                    style={{ marginBottom: '.5rem' }}
                     background={
                       darkMode
                         ? darkTheme.colors.tertiary
@@ -195,7 +197,7 @@ const Articles = () => {
                   <SkeletonLoader
                     height=".75rem"
                     width="50%"
-                    style={{ marginTop: ".5rem" }}
+                    style={{ marginTop: '.5rem' }}
                     background={
                       darkMode
                         ? darkTheme.colors.tertiary

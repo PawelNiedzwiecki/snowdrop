@@ -1,14 +1,14 @@
-import { useEffect, useContext } from "react"
+import { useEffect, useContext } from 'react'
 
-import Context from "../context"
+import Context from '../context'
 
 const useDarkMode = () => {
   const { state, setState } = useContext(Context)
 
   useEffect(() => {
-    const darkScheme = "(prefers-color-scheme: dark)"
+    const darkScheme = '(prefers-color-scheme: dark)'
 
-    const toggleTheme = event => {
+    const toggleTheme = (event) => {
       if (event.matches) {
         setState({ ...state, darkMode: true })
       } else {
@@ -20,10 +20,10 @@ const useDarkMode = () => {
       setState({ ...state, darkMode: false })
     }
 
-    window.matchMedia(darkScheme).addEventListener("change", toggleTheme)
+    window.matchMedia(darkScheme).addEventListener('change', toggleTheme)
 
     return () => {
-      window.matchMedia(darkScheme).removeEventListener("change", toggleTheme)
+      window.matchMedia(darkScheme).removeEventListener('change', toggleTheme)
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

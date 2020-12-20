@@ -1,16 +1,16 @@
 module.exports = {
-  parser: "@babel/eslint-parser",
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     requireConfigFile: false,
     ecmaFeatures: {
       jsx: true,
     },
   },
-  extends: ["plugin:react/recommended", "plugin:prettier/recommended"],
+  extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
   env: {
@@ -18,9 +18,9 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ["@babel", "react", "react-hooks", "prettier"],
+  plugins: ['@babel', 'react', 'react-hooks', 'prettier'],
   rules: {
-    "prettier/prettier": "error",
-    "react/no-find-dom-node": "off",
+    'prettier/prettier': 'error',
+    'react/no-find-dom-node': 'off',
   },
 }

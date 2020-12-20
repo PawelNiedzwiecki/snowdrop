@@ -212,7 +212,7 @@ const Projects = ({ content }) => {
   // instead they use react-visibility-sensor, therefore their visibility
   // is also stored differently
   const [onScreen, setOnScreen] = useState({})
-  const handleOnScreen = (el) => {
+  const handleOnScreen = el => {
     if (!onScreen[el]) {
       const updatedOnScreen = { ...onScreen }
       updatedOnScreen[el] = true
@@ -231,7 +231,7 @@ const Projects = ({ content }) => {
     // required for animations: set visibility for all projects to
     // "false" initially
     let initial = {}
-    projects.forEach((project) => {
+    projects.forEach(project => {
       initial[project.node.frontmatter.position] = false
     })
     setOnScreen(initial)
@@ -268,7 +268,7 @@ const Projects = ({ content }) => {
           </div>
         </motion.div>
         <div className="projects">
-          {projects.map((project) => {
+          {projects.map(project => {
             const { body, frontmatter } = project.node
             return (
               <VisibilitySensor
@@ -291,7 +291,7 @@ const Projects = ({ content }) => {
                     <div className="title">{frontmatter.title}</div>
                     <MDXRenderer>{body}</MDXRenderer>
                     <div className="tags">
-                      {frontmatter.tags.map((tag) => (
+                      {frontmatter.tags.map(tag => (
                         <Underlining key={tag} highlight>
                           {tag}
                         </Underlining>

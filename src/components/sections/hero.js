@@ -118,14 +118,6 @@ const Hero = ({ content }) => {
           <h1 className="title">
             <div className="greetings">
               {frontmatter.greetings}
-
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={variants}
-              >
-                testowy div
-              </motion.div>
               <motion.div
                 animate={eControls}
                 style={{ originX: 0.7, originY: 0.7 }}

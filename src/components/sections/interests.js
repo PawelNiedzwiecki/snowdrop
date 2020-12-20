@@ -136,7 +136,7 @@ const Interests = ({ content }) => {
       if (onScreen) {
         // i receives the value of the custom prop - can be used to stagger
         // the animation of each "interest" element
-        await iControls.start((i) => ({
+        await iControls.start(i => ({
           opacity: 1,
           scaleY: 1,
           transition: { delay: i * 0.1 },

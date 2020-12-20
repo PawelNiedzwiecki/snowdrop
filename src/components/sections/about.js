@@ -1,13 +1,13 @@
-import React, { useRef, useContext, useEffect } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import Img from "gatsby-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { motion, useAnimation } from "framer-motion"
+import React, { useRef, useContext, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { motion, useAnimation } from 'framer-motion'
 
-import { useOnScreen } from "../../hooks/"
-import Context from "../../context/"
-import ContentWrapper from "../../styles/contentWrapper"
+import { useOnScreen } from '../../hooks/'
+import Context from '../../context/'
+import ContentWrapper from '../../styles/contentWrapper'
 
 const StyledSection = styled.section`
   width: 100%;
@@ -51,12 +51,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .about-author {
       border-radius: ${({ theme }) => theme.borderRadius};
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-      filter: grayscale(20%) contrast(1) brightness(90%);
       transition: all 0.3s ease-out;
       &:hover {
-        filter: grayscale(50%) contrast(1) brightness(90%);
-        transform: translate3d(0px, -0.125rem, 0px);
-        box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
+        border-radius: ${({ theme }) =>
+          parseInt(theme.borderRadius) * 1.5 + 'rem'};
+        transform: translate3d(0px, -0.225rem, 0px);
+        box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
       }
     }
   }

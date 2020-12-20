@@ -27,6 +27,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     flex-direction: column;
     justify-content: center;
     margin-bottom: 6rem;
+    color: ${({ theme }) => theme.colors.text};
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }
@@ -128,7 +129,7 @@ const Hero = ({ content }) => {
           </h1>
           <h2 className="subtitle">
             {frontmatter.subtitlePrefix}{" "}
-            <AnimatedUnderlining animate={uControls} big>
+            <AnimatedUnderlining animate={uControls} big highlight>
               {frontmatter.subtitle}
             </AnimatedUnderlining>
           </h2>

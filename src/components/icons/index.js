@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 
 import IconXing from "./xing"
 import IconLinkedIn from "./linkedin"
+import IconFacebook from "./facebook"
+import IconInstagram from "./instagram"
 import IconMedium from "./medium"
 import IconGitHub from "./github"
 import IconBehance from "./behance"
@@ -15,6 +17,10 @@ const Icon = ({ name, color }) => {
       return <IconXing color={color} />
     case "linkedin":
       return <IconLinkedIn color={color} />
+    case "facebook":
+      return <IconFacebook color={color} />
+    case "instagram":
+      return <IconInstagram color={color} />
     case "medium":
       return <IconMedium color={color} />
     case "github":

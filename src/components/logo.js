@@ -16,10 +16,13 @@ const StyledLogo = styled.div`
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
+  &:hover {
+    color: ${({ theme, hoverColor }) => theme.colors[hoverColor] || hoverColor};
+  }
 `
 
-const Logo = ({ size, color }) => (
-  <StyledLogo color={color} size={size}>
+const Logo = ({ size, color, hoverColor }) => (
+  <StyledLogo color={color} size={size} hoverColor={hoverColor}>
     {siteShortTitle}
   </StyledLogo>
 )
@@ -27,6 +30,7 @@ const Logo = ({ size, color }) => (
 Logo.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
+  hoverColor: PropTypes.string,
 }
 
 export default Logo

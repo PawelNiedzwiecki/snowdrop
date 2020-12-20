@@ -1,24 +1,23 @@
 module.exports = {
   //-- SITE SETTINGS -----
   author: "@konstantinmuenster",
-  siteTitle: "Gatsby Starter Portfolio Minimal",
-  siteShortTitle: "Gatsby", // Used as logo text in header, footer, and splash screen
-  siteDescription:
-    "A modern one-page portfolio with a clean yet expressive design.",
+  siteTitle: "Snowdrop - make up artist",
+  siteShortTitle: "Snowdrop", // Used as logo text in header, footer, and splash screen
+  siteDescription: "Snowdrop maked up artist based in UK",
   siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
   siteLanguage: "en_US",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
-  seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
+  seoTitleSuffix: "Snowdrop", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
 
   // -- THEME SETTINGS -----
   colors: {
     lightTheme: {
-      primary: "#000000",
-      secondary: "#FFF4D9",
-      tertiary: "#F2F2F2",
+      primary: "#F24B78",
+      secondary: "#E199A0",
+      tertiary: "#FAB7A8",
       text: "#000000",
       subtext: "#555555",
-      background: "#FFFFFF",
+      background: "#ffffff",
       card: "#FFFFFF",
       scrollBar: "rgba(0, 0, 0, 0.5)",
       boxShadow: "rgba(0, 0, 0, 0.16)",
@@ -26,7 +25,7 @@ module.exports = {
     },
     darkTheme: {
       primary: "#FAFAFA",
-      secondary: "#2A2926",
+      secondary: "#91D9C4",
       tertiary: "#252525",
       text: "rgba(255, 255, 255, 0.87)",
       subtext: "#AAAAAA",
@@ -55,21 +54,12 @@ module.exports = {
   // Medium, GitHub, LinkedIn, XING, Behance
   socialMedia: [
     {
-      name: "Linkedin",
-      url: "https://www.linkedin.com/in/konstantin-muenster/",
+      name: "Instagram",
+      url: "https://www.instagram.com/snowdropmakeup/",
     },
     {
-      name: "Medium",
-      url: "https://konstantinmuenster.medium.com/",
-    },
-    {
-      name: "Github",
-      url:
-        "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
-    },
-    {
-      name: "Behance",
-      url: "https://www.behance.net/konstanmnster",
+      name: "Facebook",
+      url: "https://www.facebook.com/SnowDrop-Makeup-105157127686514",
     },
   ],
 
@@ -77,15 +67,11 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "Articles",
-        url: "/#articles",
-      },
-      {
         name: "About Me",
         url: "/#about",
       },
       {
-        name: "Features",
+        name: "Portfolio",
         url: "/#projects",
       },
     ],

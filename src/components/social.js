@@ -86,6 +86,8 @@ const StyledSocialProfile = styled.a`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "1rem")};
   font-weight: 500;
   color: ${({ theme }) => theme.colors.primary};
+  display: inline-flex;
+  align-items: center;
   &:hover {
     background-position: left bottom;
     color: ${({ theme }) => theme.colors.background};

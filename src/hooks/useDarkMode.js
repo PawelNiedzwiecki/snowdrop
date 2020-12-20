@@ -17,7 +17,7 @@ const useDarkMode = () => {
     }
 
     if (window.matchMedia && window.matchMedia(darkScheme).matches) {
-      setState({ ...state, darkMode: true })
+      setState({ ...state, darkMode: false })
     }
 
     window.matchMedia(darkScheme).addEventListener("change", toggleTheme)

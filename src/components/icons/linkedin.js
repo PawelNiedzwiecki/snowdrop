@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Linkedin = ({ color }) => {
   return (
@@ -25,15 +25,15 @@ const Linkedin = ({ color }) => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
 Linkedin.propTypes = {
   color: PropTypes.string,
-}
+};
 
 Linkedin.defaultProps = {
   color: '#000000',
-}
+};
 
-export default Linkedin
+export default Linkedin;

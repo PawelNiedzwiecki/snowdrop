@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import GlobalStateProvider from '../context/provider'
-import ContentWrapper from '../styles/contentWrapper'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { seoTitleSuffix } from '../../config'
+import GlobalStateProvider from '../context/provider';
+import ContentWrapper from '../styles/contentWrapper';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { seoTitleSuffix } from '../../config';
 
 const StyledSection = styled.section`
   width: 100%;
@@ -27,7 +27,7 @@ const StyledSection = styled.section`
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -37,16 +37,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
     padding: 0;
     height: 100%;
   }
-`
+`;
 
 const Privacy = ({ data }) => {
-  const { body, frontmatter } = data.privacy.edges[0].node
-  const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
+  const { body, frontmatter } = data.privacy.edges[0].node;
+  const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter;
 
   const globalState = {
     isIntroDone: useSplashScreen ? false : true,
     darkMode: false,
-  }
+  };
 
   return (
     <GlobalStateProvider initialState={globalState}>
@@ -67,8 +67,8 @@ const Privacy = ({ data }) => {
         </StyledSection>
       </Layout>
     </GlobalStateProvider>
-  )
-}
+  );
+};
 
 Privacy.propTypes = {
   data: PropTypes.shape({
@@ -83,9 +83,9 @@ Privacy.propTypes = {
       ).isRequired,
     }).isRequired,
   }).isRequired,
-}
+};
 
-export default Privacy
+export default Privacy;
 
 export const pageQuery = graphql`
   {
@@ -103,4 +103,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

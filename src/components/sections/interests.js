@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { motion, useAnimation } from 'framer-motion';
 
-import { detectMobileAndTablet, isSSR } from '../../utils'
-import { useOnScreen } from '../../hooks/'
-import ContentWrapper from '../../styles/contentWrapper'
-import Button from '../../styles/button'
+import { detectMobileAndTablet, isSSR } from '../../utils';
+import { useOnScreen } from '../../hooks/';
+import ContentWrapper from '../../styles/contentWrapper';
+import Button from '../../styles/button';
 
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   margin-top: 6rem;
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -38,7 +38,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const StyledInterests = styled.div`
   display: grid;
@@ -108,28 +108,28 @@ const StyledInterests = styled.div`
       margin-right: 0.5rem;
     }
   }
-`
+`;
 
 const Interests = ({ content }) => {
-  const { exports, frontmatter } = content[0].node
-  const { shownItems, interests } = exports
+  const { exports, frontmatter } = content[0];
+  const { shownItems, interests } = exports;
 
-  const [shownInterests, setShownInterests] = useState(shownItems)
+  const [shownInterests, setShownInterests] = useState(shownItems);
 
-  const ref = useRef()
-  const onScreen = useOnScreen(ref)
+  const ref = useRef();
+  const onScreen = useOnScreen(ref);
 
-  const iControls = useAnimation()
-  const bControls = useAnimation()
+  const iControls = useAnimation();
+  const bControls = useAnimation();
 
   useEffect(() => {
     // If mobile or tablet, show all interests initially
     // Otherwise interests.mdx will determine how many interests are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
+      setShownInterests(interests.length);
     }
-  }, [interests])
+  }, [interests]);
 
   useEffect(() => {
     const sequence = async () => {
@@ -140,14 +140,14 @@ const Interests = ({ content }) => {
           opacity: 1,
           scaleY: 1,
           transition: { delay: i * 0.1 },
-        }))
-        await bControls.start({ opacity: 1, scaleY: 1 })
+        }));
+        await bControls.start({ opacity: 1, scaleY: 1 });
       }
-    }
-    sequence()
-  }, [onScreen, shownInterests, iControls, bControls])
+    };
+    sequence();
+  }, [onScreen, shownInterests, iControls, bControls]);
 
-  const showMoreItems = () => setShownInterests(shownInterests + 4)
+  const showMoreItems = () => setShownInterests(shownInterests + 4);
 
   return (
     <StyledSection id="interests">
@@ -179,21 +179,19 @@ const Interests = ({ content }) => {
         </StyledInterests>
       </StyledContentWrapper>
     </StyledSection>
-  )
-}
+  );
+};
 
 Interests.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
-      node: PropTypes.shape({
-        exports: PropTypes.shape({
-          interests: PropTypes.array.isRequired,
-          shownItems: PropTypes.number.isRequired,
-        }).isRequired,
-        frontmatter: PropTypes.object.isRequired,
+      exports: PropTypes.shape({
+        interests: PropTypes.array.isRequired,
+        shownItems: PropTypes.number.isRequired,
       }).isRequired,
+      frontmatter: PropTypes.object.isRequired,
     }).isRequired
   ).isRequired,
-}
+};
 
-export default Interests
+export default Interests;

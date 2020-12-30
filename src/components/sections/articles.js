@@ -1,21 +1,21 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
-import SkeletonLoader from 'tiny-skeleton-loader-react'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useState, useEffect, useContext } from 'react';
+import styled from 'styled-components';
+import SkeletonLoader from 'tiny-skeleton-loader-react';
+import { motion, useAnimation } from 'framer-motion';
 
-import Context from '../../context'
-import ContentWrapper from '../../styles/contentWrapper'
-import Underlining from '../../styles/underlining'
-import { parseDate } from '../../utils'
-import { mediumRssFeed, shownArticles } from '../../../config'
+import Context from '../../context';
+import ContentWrapper from '../../styles/contentWrapper';
+import Underlining from '../../styles/underlining';
+import { parseDate } from '../../utils';
+import { mediumRssFeed, shownArticles } from '../../../config';
 // import { rssFeed, shownArticles } from "../../../config"
-import { lightTheme, darkTheme } from '../../styles/theme'
+import { lightTheme, darkTheme } from '../../styles/theme';
 
 const StyledSection = motion.custom(styled.section`
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
-`)
+`);
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -111,14 +111,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const Articles = () => {
-  const MAX_ARTICLES = shownArticles
+  const MAX_ARTICLES = shownArticles;
 
-  const { isIntroDone, darkMode } = useContext(Context).state
-  const [articles, setArticles] = useState()
-  const articlesControls = useAnimation()
+  const { isIntroDone, darkMode } = useContext(Context).state;
+  const [articles, setArticles] = useState();
+  const articlesControls = useAnimation();
 
   // Load and display articles after the splashScreen sequence is done
   useEffect(() => {
@@ -128,7 +128,7 @@ const Articles = () => {
           opacity: 1,
           y: 0,
           transition: { delay: 1 },
-        })
+        });
         fetch(mediumRssFeed, { headers: { Accept: 'application/json' } })
           // fetch(rssFeed, { headers: { Accept: "application/json" } })
           .then(res => res.json())
@@ -137,11 +137,11 @@ const Articles = () => {
           // .then(data => data.items.filter(item => item.title.length > 0))
           .then(newArticles => newArticles.slice(0, MAX_ARTICLES))
           .then(articles => setArticles(articles))
-          .catch(error => console.log(error))
+          .catch(error => console.log(error));
       }
-    }
-    loadArticles()
-  }, [isIntroDone, articlesControls, MAX_ARTICLES])
+    };
+    loadArticles();
+  }, [isIntroDone, articlesControls, MAX_ARTICLES]);
 
   return (
     <StyledSection
@@ -207,7 +207,7 @@ const Articles = () => {
         </div>
       </StyledContentWrapper>
     </StyledSection>
-  )
-}
+  );
+};
 
-export default Articles
+export default Articles;

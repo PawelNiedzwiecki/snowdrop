@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from 'react'
-import styled from 'styled-components'
-import Helmet from 'react-helmet'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect, useContext } from 'react';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import { motion, useAnimation } from 'framer-motion';
 
-import { lightTheme, darkTheme } from '../styles/theme'
-import Context from '../context/'
-import Logo from './logo'
+import { lightTheme, darkTheme } from '../styles/theme';
+import Context from '../context/';
+import Logo from './logo';
 
 const StyledSplashScreen = styled(motion.div)`
   position: fixed;
@@ -37,23 +37,29 @@ const StyledSplashScreen = styled(motion.div)`
     background-color: ${({ theme, darkMode }) =>
       darkMode ? theme.colors.background : theme.colors.primary};
   }
-`
+`;
 
 const SplashScreen = () => {
-  const { state, setState } = useContext(Context)
+  const { state, setState } = useContext(Context);
 
-  const backgroundControls = useAnimation()
-  const backdropControls = useAnimation()
+  const backgroundControls = useAnimation();
+  const backdropControls = useAnimation();
 
   useEffect(() => {
     const sequence = async () => {
-      await backgroundControls.start({ opacity: 1 })
-      await backdropControls.start({ height: '0%', transition: { delay: 0.8 } })
-      await backgroundControls.start({ opacity: 0, transition: { delay: 0.6 } })
-      setState({ ...state, isIntroDone: true })
-    }
-    sequence()
-  }, [backgroundControls, backdropControls, setState, state])
+      await backgroundControls.start({ opacity: 1 });
+      await backdropControls.start({
+        height: '0%',
+        transition: { delay: 0.8 },
+      });
+      await backgroundControls.start({
+        opacity: 0,
+        transition: { delay: 0.6 },
+      });
+      setState({ ...state, isIntroDone: true });
+    };
+    sequence();
+  }, [backgroundControls, backdropControls, setState, state]);
 
   return (
     <StyledSplashScreen
@@ -81,7 +87,7 @@ const SplashScreen = () => {
         />
       </div>
     </StyledSplashScreen>
-  )
-}
+  );
+};
 
-export default SplashScreen
+export default SplashScreen;

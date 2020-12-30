@@ -1,10 +1,10 @@
 module.exports = {
   //-- SITE SETTINGS -----
-  author: '@konstantinmuenster',
+  author: '@pawelniedzwiecki',
   siteTitle: 'Snowdrop - make up artist',
   siteShortTitle: 'Snowdrop', // Used as logo text in header, footer, and splash screen
   siteDescription: 'Snowdrop maked up artist based in UK',
-  siteUrl: 'https://gatsby-starter-portfolio-minimal.netlify.app/',
+  siteUrl: 'https://snowdrop.pl',
   siteLanguage: 'en_US',
   siteIcon: 'content/favicon.png', // Relative to gatsby-config file
   seoTitleSuffix: 'Snowdrop', // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
@@ -74,10 +74,14 @@ module.exports = {
         name: 'Portfolio',
         url: '/#projects',
       },
+      // {
+      //   name: 'Example',
+      //   url: '/examples',
+      // },
     ],
     button: {
       name: 'Contact',
-      url: '/#contact',
+      url: '/contact',
     },
   },
   footerLinks: [
@@ -90,4 +94,24 @@ module.exports = {
       url: '/imprint',
     },
   ],
-}
+
+  //-- CONTACT FORM ------
+  contactForm: [
+    {
+      name: 'Name',
+      type: 'text',
+    },
+    {
+      name: 'Email',
+      type: 'email',
+    },
+    {
+      name: 'Subject',
+      type: 'text',
+    },
+    {
+      name: 'Message',
+      type: 'textarea',
+    },
+  ],
+};

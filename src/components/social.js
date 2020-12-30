@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import Context from '../context'
-import Icon from './icons'
-import { lightTheme, darkTheme } from '../styles/theme'
-import { socialMedia } from '../../config'
+import Context from '../context';
+import Icon from './icons';
+import { lightTheme, darkTheme } from '../styles/theme';
+import { socialMedia } from '../../config';
 
 const StyledSocialWrapper = styled.div`
   display: grid;
@@ -66,7 +66,7 @@ const StyledSocialWrapper = styled.div`
       margin-right: 1rem;
     }
   }
-`
+`;
 
 const StyledSocialProfile = styled.a`
   width: ${({ width }) => (width ? width : 'auto')};
@@ -93,7 +93,7 @@ const StyledSocialProfile = styled.a`
     color: ${({ theme }) => theme.colors.background};
   }
   &:hover svg {
-    filter: invert(1);
+    fill: ${({ theme }) => theme.colors.background};
   }
   svg {
     height: 1rem;
@@ -101,10 +101,10 @@ const StyledSocialProfile = styled.a`
     margin-right: 0.5rem;
     margin-bottom: -0.05rem;
   }
-`
+`;
 
 const Social = ({ width, padding, fontSize, fontWeight, withIcon }) => {
-  const { darkMode } = useContext(Context).state
+  const { darkMode } = useContext(Context).state;
 
   return (
     <StyledSocialWrapper itemCount={socialMedia.length}>
@@ -133,11 +133,11 @@ const Social = ({ width, padding, fontSize, fontWeight, withIcon }) => {
             ) : null}{' '}
             {name}
           </StyledSocialProfile>
-        )
+        );
       })}
     </StyledSocialWrapper>
-  )
-}
+  );
+};
 
 Social.propTypes = {
   width: PropTypes.string,
@@ -145,6 +145,6 @@ Social.propTypes = {
   fontSize: PropTypes.string,
   fontWeight: PropTypes.string,
   withIcon: PropTypes.bool,
-}
+};
 
-export default Social
+export default Social;

@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import { lightTheme } from '../styles/theme'
+import { lightTheme } from '../styles/theme';
 
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -18,9 +18,9 @@ const SEO = ({ description, lang, meta, title }) => {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -76,20 +76,20 @@ const SEO = ({ description, lang, meta, title }) => {
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   meta: PropTypes.array,
   lang: PropTypes.string,
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
-export default SEO
+export default SEO;

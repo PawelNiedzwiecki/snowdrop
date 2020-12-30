@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React, { useContext } from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
-import ContentWrapper from '../styles/contentWrapper'
-import Context from '../context'
-import Logo from './logo'
-import { lightTheme, darkTheme } from '../styles/theme'
-import { footerLinks } from '../../config'
+import ContentWrapper from '../styles/contentWrapper';
+import Context from '../context';
+import Logo from './logo';
+import { lightTheme, darkTheme } from '../styles/theme';
+import { footerLinks } from '../../config';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
   border-top: ${({ theme, darkMode }) =>
     darkMode ? `3px solid ${theme.colors.boxShadowHover}` : null};
   margin-top: 10rem;
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -35,7 +35,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const StyledLink = styled(Link)`
   font-size: 0.875rem;
@@ -44,10 +44,10 @@ const StyledLink = styled(Link)`
   color: ${({ theme, $darkMode }) =>
     $darkMode ? theme.colors.primary : theme.colors.background};
   letter-spacing: 1px;
-`
+`;
 
 const Footer = () => {
-  const { darkMode } = useContext(Context).state
+  const { darkMode } = useContext(Context).state;
   return (
     <StyledFooter darkMode={darkMode}>
       <StyledContentWrapper>
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </StyledContentWrapper>
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

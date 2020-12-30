@@ -6,7 +6,7 @@ const {
   siteIcon,
   siteUrl,
   colors,
-} = require(`./config`)
+} = require(`./config`);
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +14,8 @@ module.exports = {
     title: siteTitle,
     description: siteDescription,
     siteUrl: siteUrl,
+    data: ['item 1', 'item 2'],
+    person: { name: 'peter', age: 32 },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -79,4 +81,4 @@ module.exports = {
       },
     },
   ],
-}
+};

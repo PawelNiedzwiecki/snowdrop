@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   width: 15.625rem;
@@ -28,13 +28,13 @@ const StyledButton = styled.button`
     margin-right: 0.3rem;
     margin-bottom: -0.175rem;
   }
-`
+`;
 
 const Button = ({ onClick, textAlign, center, children }) => (
   <StyledButton onClick={onClick} textAlign={textAlign} center={center}>
     {children}
   </StyledButton>
-)
+);
 
 Button.propTypes = {
   onClick: PropTypes.func,
@@ -44,6 +44,6 @@ Button.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-}
+};
 
-export default Button
+export default Button;

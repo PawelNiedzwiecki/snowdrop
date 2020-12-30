@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-import { navLinks } from '../../config'
+import { navLinks } from '../../config';
 
 const StyledBackdrop = styled.div`
   position: fixed;
@@ -18,7 +18,7 @@ const StyledBackdrop = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
-`
+`;
 
 const StyledContainer = styled.div`
   display: block;
@@ -36,7 +36,7 @@ const StyledContainer = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
-`
+`;
 
 const StyledNav = styled.nav`
   display: flex;
@@ -70,10 +70,10 @@ const StyledNav = styled.nav`
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     background: ${({ theme }) => theme.colors.background};
   }
-`
+`;
 
 const Sidebar = ({ open, setOpen }) => {
-  const { menu, button } = navLinks
+  const { menu, button } = navLinks;
   return (
     <>
       <StyledContainer open={open} aria-hidden={!open} tabIndex={open ? 1 : -1}>
@@ -99,12 +99,12 @@ const Sidebar = ({ open, setOpen }) => {
       </StyledContainer>
       <StyledBackdrop open={open} />
     </>
-  )
-}
+  );
+};
 
 Sidebar.propTypes = {
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,
-}
+};
 
-export default Sidebar
+export default Sidebar;

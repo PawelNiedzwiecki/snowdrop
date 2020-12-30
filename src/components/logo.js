@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { siteShortTitle } from '../../config'
+import { siteShortTitle } from '../../config';
 
 const StyledLogo = styled.div`
   position: relative;
@@ -19,18 +19,18 @@ const StyledLogo = styled.div`
   &:hover {
     color: ${({ theme, hoverColor }) => theme.colors[hoverColor] || hoverColor};
   }
-`
+`;
 
 const Logo = ({ size, color, hoverColor }) => (
   <StyledLogo color={color} size={size} hoverColor={hoverColor}>
     {siteShortTitle}
   </StyledLogo>
-)
+);
 
 Logo.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
   hoverColor: PropTypes.string,
-}
+};
 
-export default Logo
+export default Logo;

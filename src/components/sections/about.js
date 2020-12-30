@@ -1,20 +1,20 @@
-import React, { useRef, useContext, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { motion, useAnimation } from 'framer-motion'
+import React, { useRef, useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { motion, useAnimation } from 'framer-motion';
 
-import { useOnScreen } from '../../hooks/'
-import Context from '../../context/'
-import ContentWrapper from '../../styles/contentWrapper'
+import { useOnScreen } from '../../hooks/';
+import Context from '../../context/';
+import ContentWrapper from '../../styles/contentWrapper';
 
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   margin-top: 4rem;
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -60,29 +60,29 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const About = ({ content }) => {
-  const { frontmatter, body } = content[0].node
-  const { isIntroDone } = useContext(Context).state
-  const tControls = useAnimation()
-  const iControls = useAnimation()
+  const { frontmatter, body } = content[0];
+  const { isIntroDone } = useContext(Context).state;
+  const tControls = useAnimation();
+  const iControls = useAnimation();
 
   // Required for animating the text content
-  const tRef = useRef()
-  const tOnScreen = useOnScreen(tRef)
+  const tRef = useRef();
+  const tOnScreen = useOnScreen(tRef);
 
   // Required for animating the image
-  const iRef = useRef()
-  const iOnScreen = useOnScreen(iRef)
+  const iRef = useRef();
+  const iOnScreen = useOnScreen(iRef);
 
   // Only trigger animations if the intro is done or disabled
   useEffect(() => {
     if (isIntroDone) {
-      if (tOnScreen) tControls.start({ opacity: 1, y: 0 })
-      if (iOnScreen) iControls.start({ opacity: 1, x: 0 })
+      if (tOnScreen) tControls.start({ opacity: 1, y: 0 });
+      if (iOnScreen) iControls.start({ opacity: 1, x: 0 });
     }
-  }, [isIntroDone, tControls, iControls, tOnScreen, iOnScreen])
+  }, [isIntroDone, tControls, iControls, tOnScreen, iOnScreen]);
 
   return (
     <StyledSection id="about">
@@ -111,18 +111,16 @@ const About = ({ content }) => {
         </motion.div>
       </StyledContentWrapper>
     </StyledSection>
-  )
-}
+  );
+};
 
 About.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
-      node: PropTypes.shape({
-        body: PropTypes.string.isRequired,
-        frontmatter: PropTypes.object.isRequired,
-      }).isRequired,
+      body: PropTypes.string.isRequired,
+      frontmatter: PropTypes.object.isRequired,
     }).isRequired
   ).isRequired,
-}
+};
 
-export default About
+export default About;

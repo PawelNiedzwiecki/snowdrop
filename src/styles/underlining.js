@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Underlining = styled.span`
   box-shadow: inset 0 ${({ big }) => (big ? '-1rem' : '-.5rem')} 0
@@ -9,6 +9,6 @@ const Underlining = styled.span`
     box-shadow: inset 0 ${({ big }) => (big ? '-2rem' : '-1rem')} 0
       ${({ theme }) => theme.colors.secondary};
   }
-`
+`;
 
-export default Underlining
+export default Underlining;

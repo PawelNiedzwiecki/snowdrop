@@ -23,4 +23,4 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/no-find-dom-node': 'off',
   },
-}
+};

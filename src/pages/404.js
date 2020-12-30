@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import GlobalStateProvider from '../context/provider'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import ContentWrapper from '../styles/contentWrapper'
+import GlobalStateProvider from '../context/provider';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import ContentWrapper from '../styles/contentWrapper';
 
 const StyledSection = styled.section`
   width: 100%;
@@ -16,7 +16,7 @@ const StyledSection = styled.section`
   h1 {
     font-size: 1.5rem;
   }
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -26,13 +26,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
     padding: 0;
     height: 100%;
   }
-`
+`;
 
 const NotFoundPage = () => {
   const globalState = {
     isIntroDone: true,
     darkMode: false,
-  }
+  };
 
   return (
     <GlobalStateProvider initialState={globalState}>
@@ -49,7 +49,7 @@ const NotFoundPage = () => {
         </StyledSection>
       </Layout>
     </GlobalStateProvider>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

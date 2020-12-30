@@ -1,14 +1,14 @@
-import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { motion } from 'framer-motion'
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { motion } from 'framer-motion';
 
-import { useOnScreen } from '../../hooks'
-import ContentWrapper from '../../styles/contentWrapper'
-import Underlining from '../../styles/underlining'
-import Social from '../social'
+import { useOnScreen } from '../../hooks';
+import ContentWrapper from '../../styles/contentWrapper';
+import Underlining from '../../styles/underlining';
+import Social from '../social';
 
 const StyledSection = styled(motion.section)`
   width: 100%;
@@ -17,7 +17,7 @@ const StyledSection = styled(motion.section)`
   margin-top: 6rem;
   display: flex;
   justify-content: center;
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -57,18 +57,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const Contact = ({ content }) => {
-  const { body, frontmatter } = content[0].node
+  const { body, frontmatter } = content[0];
 
   // Required for animation
-  const ref = useRef()
-  const onScreen = useOnScreen(ref)
+  const ref = useRef();
+  const onScreen = useOnScreen(ref);
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
     <StyledSection
@@ -96,18 +96,16 @@ const Contact = ({ content }) => {
         <Social padding="0.5rem 1.25rem" withIcon />
       </StyledContentWrapper>
     </StyledSection>
-  )
-}
+  );
+};
 
 Contact.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
-      node: PropTypes.shape({
-        body: PropTypes.string.isRequired,
-        frontmatter: PropTypes.object.isRequired,
-      }).isRequired,
+      body: PropTypes.string.isRequired,
+      frontmatter: PropTypes.object.isRequired,
     }).isRequired
   ).isRequired,
-}
+};
 
-export default Contact
+export default Contact;

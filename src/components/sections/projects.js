@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Img from 'gatsby-image'
-import VisibilitySensor from 'react-visibility-sensor'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Img from 'gatsby-image';
+import VisibilitySensor from 'react-visibility-sensor';
+import { motion } from 'framer-motion';
 
-import { useOnScreen } from '../../hooks'
-import Context from '../../context'
-import ContentWrapper from '../../styles/contentWrapper'
-import Underlining from '../../styles/underlining'
-import Button from '../../styles/button'
-import Icon from '../../components/icons'
-import { lightTheme, darkTheme } from '../../styles/theme'
+import { useOnScreen } from '../../hooks';
+import Context from '../../context';
+import ContentWrapper from '../../styles/contentWrapper';
+import Underlining from '../../styles/underlining';
+import Button from '../../styles/button';
+import Icon from '../../components/icons';
+import { lightTheme, darkTheme } from '../../styles/theme';
 
 const StyledSection = styled.section`
   width: 100%;
@@ -27,7 +27,7 @@ const StyledSection = styled.section`
       margin: 0 auto;
     }
   }
-`
+`;
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
@@ -103,7 +103,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
+`;
 
 const StyledProject = styled(motion.div)`
   display: flex;
@@ -197,62 +197,62 @@ const StyledProject = styled(motion.div)`
       height: 18.75rem;
     }
   }
-`
+`;
 
 const Projects = ({ content }) => {
-  const { darkMode } = useContext(Context).state
-  const sectionDetails = content[0].node
-  const projects = content.slice(1, content.length)
+  const { darkMode } = useContext(Context).state;
+  const sectionDetails = content[0];
+  const projects = content.slice(1, content.length);
 
   // visibleProject is needed to show which project is currently
   // being viewed in the horizontal slider on mobile and tablet
-  const [visibleProject, setVisibleProject] = useState(1)
+  const [visibleProject, setVisibleProject] = useState(1);
 
   // projects don't track the visibility by using the onScreen hook
   // instead they use react-visibility-sensor, therefore their visibility
   // is also stored differently
-  const [onScreen, setOnScreen] = useState({})
+  const [onScreen, setOnScreen] = useState({});
   const handleOnScreen = el => {
     if (!onScreen[el]) {
-      const updatedOnScreen = { ...onScreen }
-      updatedOnScreen[el] = true
-      setOnScreen(updatedOnScreen)
+      const updatedOnScreen = { ...onScreen };
+      updatedOnScreen[el] = true;
+      setOnScreen(updatedOnScreen);
     }
-  }
+  };
   const pVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   useEffect(() => {
     // mobile and tablet only: set first project as visible in the
     // horizontal slider
-    setVisibleProject(1)
+    setVisibleProject(1);
     // required for animations: set visibility for all projects to
     // "false" initially
-    let initial = {}
+    let initial = {};
     projects.forEach(project => {
-      initial[project.node.frontmatter.position] = false
-    })
-    setOnScreen(initial)
+      initial[project.frontmatter.position] = false;
+    });
+    setOnScreen(initial);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   // Required for animating the title
-  const tRef = useRef()
-  const tOnScreen = useOnScreen(tRef)
+  const tRef = useRef();
+  const tOnScreen = useOnScreen(tRef);
   const tVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-  }
+  };
 
   // Required for animating the button
-  const bRef = useRef()
-  const bOnScreen = useOnScreen(bRef)
+  const bRef = useRef();
+  const bOnScreen = useOnScreen(bRef);
   const bVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-  }
+  };
 
   return (
     <StyledSection id="projects">
@@ -269,7 +269,7 @@ const Projects = ({ content }) => {
         </motion.div>
         <div className="projects">
           {projects.map(project => {
-            const { body, frontmatter } = project.node
+            const { body, frontmatter } = project;
             return (
               <VisibilitySensor
                 key={frontmatter.position}
@@ -291,11 +291,12 @@ const Projects = ({ content }) => {
                     <div className="title">{frontmatter.title}</div>
                     <MDXRenderer>{body}</MDXRenderer>
                     <div className="tags">
-                      {frontmatter.tags.map(tag => (
-                        <Underlining key={tag} highlight>
-                          {tag}
-                        </Underlining>
-                      ))}
+                      {frontmatter.tags &&
+                        frontmatter.tags.map(tag => (
+                          <Underlining key={tag} highlight>
+                            {tag}
+                          </Underlining>
+                        ))}
                     </div>
                     <div className="links">
                       {frontmatter.github && (
@@ -345,7 +346,7 @@ const Projects = ({ content }) => {
                   </VisibilitySensor>
                 </StyledProject>
               </VisibilitySensor>
-            )
+            );
           })}
         </div>
       </StyledContentWrapper>
@@ -366,18 +367,16 @@ const Projects = ({ content }) => {
         </motion.a>
       )}
     </StyledSection>
-  )
-}
+  );
+};
 
 Projects.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
-      node: PropTypes.shape({
-        body: PropTypes.string.isRequired,
-        frontmatter: PropTypes.object.isRequired,
-      }).isRequired,
+      body: PropTypes.string.isRequired,
+      frontmatter: PropTypes.object.isRequired,
     }).isRequired
   ).isRequired,
-}
+};
 
-export default Projects
+export default Projects;

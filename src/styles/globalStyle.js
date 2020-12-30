@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import modernNormalize from 'styled-modern-normalize'
+import { createGlobalStyle } from 'styled-components';
+import modernNormalize from 'styled-modern-normalize';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -97,6 +97,6 @@ const GlobalStyle = createGlobalStyle`
         opacity: 0.1;
       }
 
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

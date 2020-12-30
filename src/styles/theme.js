@@ -1,4 +1,4 @@
-const { colors, fonts } = require('../../config')
+const { colors, fonts } = require('../../config');
 
 export const sharedPreferences = {
   fonts: fonts,
@@ -12,14 +12,14 @@ export const sharedPreferences = {
   pageWidth: '62.5rem',
   headerHeight: '6.25rem',
   footerHeight: '7.5rem',
-}
+};
 
 export const lightTheme = {
   ...sharedPreferences,
   colors: colors.lightTheme,
-}
+};
 
 export const darkTheme = {
   ...sharedPreferences,
   colors: colors.darkTheme,
-}
+};

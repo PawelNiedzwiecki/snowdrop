@@ -43,6 +43,11 @@ const InstagramPostsWrapper = styled(motion.div)`
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 16vw;
+    & > :nth-child(6n + 2),
+    & > :nth-child(6n + 1) {
+      grid-column: auto;
+      grid-row: auto;
+    }
     & > :nth-child(6n + 3) {
       grid-column: span 1;
       grid-row: span 2;

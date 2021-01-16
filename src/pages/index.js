@@ -153,9 +153,6 @@ export const pageQuery = graphql`
       sort: { fields: timestamp, order: DESC }
     ) {
       nodes {
-        thumbnails {
-          src
-        }
         localFile {
           childImageSharp {
             fluid(maxWidth: 500, quality: 100) {

@@ -10,9 +10,15 @@ describe('IndexPage', () => {
   it('renders all sections', () => {
     cy.get('#hero').should('exist');
     cy.get('#about').should('exist');
-    // cy.get('#interests').should('exist');
-    cy.get('#projects').should('exist');
+    cy.get('#services').should('exist');
+    cy.get('#instagram').should('exist');
     cy.get('#contact').should('exist');
+  });
+
+  it('should have 10 instagram images', () => {
+    cy.get('#instagram')
+      .find('.instagramImage')
+      .should('have.length', 10);
   });
 
   it('is animated', () => {
@@ -20,7 +26,7 @@ describe('IndexPage', () => {
     cy.findByTestId('animated-heading').should('have.css', 'opacity', '1');
   });
 
-  it('references legal pages', () => {
+  it.skip('references legal pages', () => {
     cy.findByTestId('footer-links')
       .findByText(/imprint/i)
       .should('have.attr', 'href')
@@ -31,7 +37,7 @@ describe('IndexPage', () => {
       .and('include', 'privacy');
   });
 
-  it('renders other pages', () => {
+  it.skip('renders other pages', () => {
     cy.findByTestId('footer-links')
       .findByText(/imprint/i)
       .click();

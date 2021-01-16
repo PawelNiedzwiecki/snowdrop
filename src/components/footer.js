@@ -6,7 +6,7 @@ import ContentWrapper from '../styles/contentWrapper';
 import Context from '../context';
 import Logo from './logo';
 import { lightTheme, darkTheme } from '../styles/theme';
-import { footerLinks } from '../../config';
+import { footerLinks, authorLink } from '../../config';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
   background: ${({ theme, darkMode }) =>
     darkMode ? theme.colors.background : theme.colors.primary};
   border-top: ${({ theme, darkMode }) =>
-    darkMode ? `3px solid ${theme.colors.boxShadowHover}` : null};
+    darkMode ? `1px solid ${theme.colors.boxShadowHover}` : null};
   margin-top: 10rem;
 `;
 
@@ -46,6 +46,18 @@ const StyledLink = styled(Link)`
   letter-spacing: 1px;
 `;
 
+const MyLittleCopyright = styled.div`
+  font-size: 0.875rem;
+  color: ${({ theme, $darkMode }) =>
+    $darkMode ? theme.colors.background : theme.colors.primary};
+  letter-spacing: 1px;
+  a {
+    &:hover {
+      color: ${({ theme }) => theme.colors.secondary};
+    }
+  }
+`;
+
 const Footer = () => {
   const { darkMode } = useContext(Context).state;
   return (
@@ -60,11 +72,14 @@ const Footer = () => {
           />
         </Link>
         <div className="footer-links" data-testid="footer-links">
-          {footerLinks.map(({ name, url }, key) => (
+          {/* {footerLinks.map(({ name, url }, key) => (
             <StyledLink key={key} to={url} $darkMode={darkMode}>
               {name}
             </StyledLink>
-          ))}
+          ))} */}
+          <MyLittleCopyright>
+            Copyright by <a href={authorLink}>Pawel Niedzwiecki</a>
+          </MyLittleCopyright>
         </div>
       </StyledContentWrapper>
     </StyledFooter>

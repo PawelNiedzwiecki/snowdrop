@@ -10,6 +10,7 @@ import Articles from '../components/sections/articles';
 import About from '../components/sections/about';
 import Interests from '../components/sections/interests';
 import Projects from '../components/sections/projects';
+import Instagram from '../components/sections/instagram';
 import Contact from '../components/sections/contact';
 import { seoTitleSuffix } from '../../config';
 
@@ -39,6 +40,8 @@ const IndexPage = ({ data }) => {
         <About content={data.about.nodes} />
         {/* <Interests content={data.interests.nodes} /> */}
         <Projects content={data.projects.nodes} />
+        {/* <Tutorial content={data.projects.nodes} /> */}
+        <Instagram content={data.instagram.nodes} />
         <Contact content={data.contact.nodes} />
       </Layout>
     </GlobalStateProvider>
@@ -143,6 +146,24 @@ export const pageQuery = graphql`
           buttonUrl
           buttonText
         }
+      }
+    }
+    instagram: allInstaNode(
+      limit: 10
+      sort: { fields: timestamp, order: DESC }
+    ) {
+      nodes {
+        thumbnails {
+          src
+        }
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        id
       }
     }
     contact: allMdx(

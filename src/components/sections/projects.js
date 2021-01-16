@@ -18,7 +18,7 @@ const StyledSection = styled.section`
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
-  margin-top: 6rem;
+  margin-top: 5rem;
   .cta-btn {
     display: block;
     text-align: center;
@@ -94,7 +94,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .counter {
       position: absolute;
-      top: 2.2rem;
+      top: 0;
       right: 2.5rem;
       font-size: 1.125rem;
       font-weight: 500;
@@ -124,7 +124,7 @@ const StyledProject = styled(motion.div)`
     justify-content: space-between;
     flex-shrink: 1;
     max-width: 62.5rem;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     padding-right: 0;
     /* Positioning of image and details should vary */
     flex-direction: ${({ position }) =>
@@ -255,7 +255,7 @@ const Projects = ({ content }) => {
   };
 
   return (
-    <StyledSection id="projects">
+    <StyledSection id="services">
       <StyledContentWrapper>
         <motion.div
           ref={tRef}

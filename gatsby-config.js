@@ -8,6 +8,10 @@ const {
   colors,
 } = require(`./config`);
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     author: author,
@@ -26,14 +30,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
-    // {
-    //   resolve: `gatsby-plugin-gtag`,
-    //   options: {
-    //     trackingId: `UA-XXXXXXXX-X`,
-    //     head: false,
-    //     anonymize: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: process.env.GATSBY_INSTAGRAM_USERNAME,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,6 +68,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: `content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `images`,
       },
     },
     {

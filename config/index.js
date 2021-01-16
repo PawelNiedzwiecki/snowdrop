@@ -1,6 +1,7 @@
 module.exports = {
   //-- SITE SETTINGS -----
   author: '@pawelniedzwiecki',
+  authorLink: 'https://github.com/PawelNiedzwiecki',
   siteTitle: 'Snowdrop - make up artist',
   siteShortTitle: 'Snowdrop', // Used as logo text in header, footer, and splash screen
   siteDescription: 'Snowdrop maked up artist based in UK',
@@ -12,7 +13,7 @@ module.exports = {
   // -- THEME SETTINGS -----
   colors: {
     lightTheme: {
-      primary: '#F24B78',
+      primary: '#FB4849',
       secondary: '#E199A0',
       tertiary: '#FAB7A8',
       text: '#000000',
@@ -25,7 +26,7 @@ module.exports = {
     },
     darkTheme: {
       primary: '#FAFAFA',
-      secondary: '#91D9C4',
+      secondary: '#08B1AA',
       tertiary: '#252525',
       text: 'rgba(255, 255, 255, 0.87)',
       subtext: '#AAAAAA',
@@ -71,8 +72,12 @@ module.exports = {
         url: '/#about',
       },
       {
+        name: 'Services',
+        url: '/#services',
+      },
+      {
         name: 'Portfolio',
-        url: '/#projects',
+        url: '/#instagram',
       },
       // {
       //   name: 'Example',
@@ -81,7 +86,7 @@ module.exports = {
     ],
     button: {
       name: 'Contact',
-      url: '/#contact',
+      url: '/contact',
     },
   },
   footerLinks: [

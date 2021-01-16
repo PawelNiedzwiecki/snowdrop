@@ -136,14 +136,6 @@ const Hero = ({ content }) => {
               {frontmatter.subtitle}
             </AnimatedUnderlining>
           </h2>
-          <motion.div
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            motion test
-          </motion.div>
           <div className="description">
             <MDXRenderer>{body}</MDXRenderer>
           </div>

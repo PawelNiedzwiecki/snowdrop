@@ -54,6 +54,12 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    input, textarea {
+        font-size: 1rem;
+        color: ${({ theme }) => theme.colors.text};
+        font-family: ${({ theme }) => theme.fonts.primary};
+    }
+
     h1 {
         font-weight: 700;
         font-size: 2rem;

@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { motion } from 'framer-motion';
 
+import ContactForm from '../contactForm';
 import { useOnScreen } from '../../hooks';
 import ContentWrapper from '../../styles/contentWrapper';
 import Underlining from '../../styles/underlining';
@@ -80,7 +81,7 @@ const Contact = ({ content }) => {
       <StyledContentWrapper>
         <h3>{frontmatter.title}</h3>
         <MDXRenderer>{body}</MDXRenderer>
-        <div className="profile">
+        {/* <div className="profile">
           <Img
             className="avatar"
             fluid={frontmatter.profileImage.childImageSharp.fluid}
@@ -92,7 +93,8 @@ const Contact = ({ content }) => {
               <Underlining highlight>{frontmatter.email}</Underlining>
             </a>
           </div>
-        </div>
+        </div> */}
+        <ContactForm />
         <Social padding="0.5rem 1.25rem" withIcon />
       </StyledContentWrapper>
     </StyledSection>

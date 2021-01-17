@@ -6,7 +6,7 @@ module.exports = {
   siteShortTitle: 'Snowdrop', // Used as logo text in header, footer, and splash screen
   siteDescription: 'Snowdrop maked up artist based in UK',
   siteUrl: 'https://snowdrop.pl',
-  siteLanguage: 'en_US',
+  siteLanguage: 'en_GB',
   siteIcon: 'content/favicon.png', // Relative to gatsby-config file
   seoTitleSuffix: 'Snowdrop', // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
 

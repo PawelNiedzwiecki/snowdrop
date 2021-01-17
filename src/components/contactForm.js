@@ -26,18 +26,8 @@ const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    alert(`Welcome ${email} ${body}!`);
-  };
-
   return (
-    <StyledForm
-      name="contact"
-      onSubmit={handleSubmit}
-      method="POST"
-      data-netlify="true"
-    >
+    <StyledForm name="contact" method="POST" data-netlify="true">
       <StyledInput
         type="text"
         name="email"

@@ -86,7 +86,7 @@ module.exports = {
     ],
     button: {
       name: 'Contact',
-      url: '/contact',
+      url: '/#contact',
     },
   },
   footerLinks: [

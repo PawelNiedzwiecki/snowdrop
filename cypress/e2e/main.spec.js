@@ -16,9 +16,7 @@ describe('IndexPage', () => {
   });
 
   it('should have 10 instagram images', () => {
-    cy.get('#instagram')
-      .find('.instagramImage')
-      .should('have.length', 10);
+    cy.get('#instagram').find('.instagramImage').should('have.length', 10);
   });
 
   it('is animated', () => {

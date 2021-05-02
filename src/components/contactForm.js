@@ -34,13 +34,13 @@ const ContactForm = () => {
         name="email"
         placeholder="Email address"
         value={email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <StyledInput
         as="textarea"
         placeholder="Ask me anything"
         name="body"
-        onChange={e => setBody(e.target.value)}
+        onChange={(e) => setBody(e.target.value)}
       >
         {body}
       </StyledInput>

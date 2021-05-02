@@ -8,7 +8,7 @@ const useDarkMode = () => {
   useEffect(() => {
     const darkScheme = '(prefers-color-scheme: dark)';
 
-    const toggleTheme = event => {
+    const toggleTheme = (event) => {
       if (event.matches) {
         setState({ ...state, darkMode: true });
       } else {

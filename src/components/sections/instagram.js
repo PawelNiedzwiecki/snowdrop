@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -90,14 +90,14 @@ const Instagram = ({ content }) => {
     visible: { opacity: 1 },
   };
 
-  const instagramPost = node => {
+  const instagramPost = (node) => {
     const postLink = `https://www.instagram.com/p/${node.id}/`;
     return (
       <StyledInstagramPost key={node.id}>
         <a href={postLink}>
-          <Img
+          <GatsbyImage
+            image={node.localFile.childImageSharp.gatsbyImageData}
             className="instagramImage"
-            fluid={node.localFile.childImageSharp.fluid}
           />
         </a>
       </StyledInstagramPost>
@@ -113,7 +113,7 @@ const Instagram = ({ content }) => {
           variants={tVariants}
           animate={tOnScreen ? 'visible' : 'hidden'}
         >
-          {content.map(node => instagramPost(node))}
+          {content.map((node) => instagramPost(node))}
         </InstagramPostsWrapper>
       </StyledContentWrapper>
     </StyledSection>

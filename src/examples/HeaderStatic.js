@@ -20,7 +20,7 @@ const ComponentName = () => (
         }
       }
     `}
-    render={data => <h4>{data.site.info.description}</h4>}
+    render={(data) => <h4>{data.site.info.description}</h4>}
   ></StaticQuery>
 );
 

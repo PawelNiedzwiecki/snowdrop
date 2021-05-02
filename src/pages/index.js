@@ -75,9 +75,7 @@ export const pageQuery = graphql`
           subtitle
           icon {
             childImageSharp {
-              fluid(maxWidth: 60, quality: 90) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 60, quality: 90, layout: CONSTRAINED)
             }
           }
         }
@@ -90,9 +88,7 @@ export const pageQuery = graphql`
           title
           image {
             childImageSharp {
-              fluid(maxWidth: 400, quality: 90) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 400, quality: 90, layout: CONSTRAINED)
             }
           }
         }
@@ -108,9 +104,12 @@ export const pageQuery = graphql`
             name
             icon {
               childImageSharp {
-                fixed(width: 20, height: 20, quality: 90) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(
+                  width: 20
+                  height: 20
+                  quality: 90
+                  layout: FIXED
+                )
               }
             }
           }
@@ -133,12 +132,9 @@ export const pageQuery = graphql`
           title
           category
           emoji
-          # external
           screenshot {
             childImageSharp {
-              fluid(maxWidth: 400, quality: 90) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 400, quality: 90, layout: CONSTRAINED)
             }
           }
           position
@@ -155,9 +151,7 @@ export const pageQuery = graphql`
       nodes {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
           }
         }
         id
@@ -174,9 +168,7 @@ export const pageQuery = graphql`
           email
           profileImage {
             childImageSharp {
-              fluid(maxWidth: 400, quality: 90) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 400, quality: 90, layout: CONSTRAINED)
             }
           }
         }

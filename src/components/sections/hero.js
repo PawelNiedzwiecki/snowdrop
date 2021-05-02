@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -122,9 +122,11 @@ const Hero = ({ content }) => {
                 animate={eControls}
                 style={{ originX: 0.7, originY: 0.7 }}
               >
-                <Img
+                <StaticImage
+                  // image={frontmatter.icon.childImageSharp.gatsbyImageData}
+                  src="../../../content/index/hero/waving-hand.png"
                   className="emoji"
-                  fluid={frontmatter.icon.childImageSharp.fluid}
+                  placeholder="tracedSVG"
                 />
               </motion.div>
             </div>

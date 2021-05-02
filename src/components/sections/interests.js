@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 
 import { detectMobileAndTablet, isSSR } from '../../utils';
@@ -136,7 +136,7 @@ const Interests = ({ content }) => {
       if (onScreen) {
         // i receives the value of the custom prop - can be used to stagger
         // the animation of each "interest" element
-        await iControls.start(i => ({
+        await iControls.start((i) => ({
           opacity: 1,
           scaleY: 1,
           transition: { delay: i * 0.1 },
@@ -162,7 +162,11 @@ const Interests = ({ content }) => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+              <GatsbyImage
+                image={icon.childImageSharp.gatsbyImageData}
+                className="icon"
+              />{' '}
+              {name}
             </motion.div>
           ))}
           {shownInterests < interests.length && (

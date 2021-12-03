@@ -343,6 +343,7 @@ const Projects = ({ content }) => {
                       image={
                         frontmatter.screenshot.childImageSharp.gatsbyImageData
                       }
+                      alt=""
                       className="screenshot"
                     />
                   </VisibilitySensor>

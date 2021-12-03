@@ -96,6 +96,7 @@ const Instagram = ({ content }) => {
       <StyledInstagramPost key={node.id}>
         <a href={postLink}>
           <GatsbyImage
+            alt=""
             image={node.localFile.childImageSharp.gatsbyImageData}
             className="instagramImage"
           />

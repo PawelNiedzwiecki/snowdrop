@@ -165,6 +165,7 @@ const Interests = ({ content }) => {
               <GatsbyImage
                 image={icon.childImageSharp.gatsbyImageData}
                 className="icon"
+                alt=""
               />{' '}
               {name}
             </motion.div>

@@ -38,12 +38,11 @@ const ContactForm = () => {
       />
       <StyledInput
         as="textarea"
+        defaultValue={body}
         placeholder="Ask me anything"
         name="body"
         onChange={(e) => setBody(e.target.value)}
-      >
-        {body}
-      </StyledInput>
+      />
       <Button type="submit">Submit</Button>
     </StyledForm>
   );

@@ -6,13 +6,16 @@ import GlobalStateProvider from '../context/provider';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Hero from '../components/sections/hero';
-import Articles from '../components/sections/articles';
+// import Articles from '../components/sections/articles';
 import About from '../components/sections/about';
-import Interests from '../components/sections/interests';
+// import Interests from '../components/sections/interests';
 import Projects from '../components/sections/projects';
-import Instagram from '../components/sections/instagram';
+// import Instagram from '../components/sections/instagram';
 import Contact from '../components/sections/contact';
 import { seoTitleSuffix } from '../../config';
+
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.index.nodes[0];
@@ -41,7 +44,7 @@ const IndexPage = ({ data }) => {
         {/* <Interests content={data.interests.nodes} /> */}
         <Projects content={data.projects.nodes} />
         {/* <Tutorial content={data.projects.nodes} /> */}
-        <Instagram content={data.instagram.nodes} />
+        {/* <Instagram content={data.instagram.nodes} /> */}
         <Contact content={data.contact.nodes} />
       </Layout>
     </GlobalStateProvider>
@@ -144,19 +147,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    instagram: allInstaNode(
-      limit: 10
-      sort: { fields: timestamp, order: DESC }
-    ) {
-      nodes {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
-          }
-        }
-        id
-      }
-    }
     contact: allMdx(
       filter: { fileAbsolutePath: { regex: "/index/contact/" } }
     ) {
@@ -176,3 +166,17 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// instagram: allInstaNode(
+//   limit: 10
+//   sort: { fields: timestamp, order: DESC }
+// ) {
+//   nodes {
+//     localFile {
+//       childImageSharp {
+//         gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+//       }
+//     }
+//     id
+//   }
+// }

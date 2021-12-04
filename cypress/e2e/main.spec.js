@@ -11,11 +11,10 @@ describe('IndexPage', () => {
     cy.get('#hero').should('exist');
     cy.get('#about').should('exist');
     cy.get('#services').should('exist');
-    cy.get('#instagram').should('exist');
     cy.get('#contact').should('exist');
   });
 
-  it('should have 10 instagram images', () => {
+  it.skip('should have 10 instagram images', () => {
     cy.get('#instagram').find('.instagramImage').should('have.length', 10);
   });
 

@@ -7,7 +7,11 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -18,7 +22,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['@babel', 'react', 'react-hooks', 'prettier'],
+  plugins: ['@babel', 'jsx-a11y', 'react', 'react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'react/no-find-dom-node': 'off',

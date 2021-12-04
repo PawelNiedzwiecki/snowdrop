@@ -125,6 +125,7 @@ const Hero = ({ content }) => {
                 <StaticImage
                   // image={frontmatter.icon.childImageSharp.gatsbyImageData}
                   src="../../../content/index/hero/waving-hand.png"
+                  alt="emoji"
                   className="emoji"
                   placeholder="tracedSVG"
                 />

@@ -30,13 +30,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: process.env.INSTAGRAM_USERNAME,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -78,17 +71,25 @@ module.exports = {
         name: `images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-eslint`,
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: [`develop`],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
-      },
-    },
   ],
 };
+
+//
+// {
+//   resolve: `gatsby-source-instagram`,
+//   options: {
+//     username: process.env.INSTAGRAM_USERNAME,
+//   },
+// },
+// {
+//   resolve: `gatsby-plugin-eslint`,
+//   options: {
+//     test: /\.js$|\.jsx$/,
+//     exclude: /(node_modules|.cache|public)/,
+//     stages: [`develop`],
+//     options: {
+//       emitWarning: true,
+//       failOnError: false,
+//     },
+//   },
+// },

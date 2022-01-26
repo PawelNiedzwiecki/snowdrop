@@ -15325,10 +15325,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tiny-skeleton-loader-react@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/tiny-skeleton-loader-react/-/tiny-skeleton-loader-react-1.1.6.tgz#2f30f25f14205433661c7d2ea66f8fd6a6f8a129"
-  integrity sha512-FTBjfW8OTRu0clJva82DoU7f0ZL720yRZft/3YkgbNmNu3CsL49fxIMQJYmrTGaDjDryy+uHvdBWv4Jz/f/G3Q==
+tiny-skeleton-loader-react@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/tiny-skeleton-loader-react/-/tiny-skeleton-loader-react-1.1.8.tgz#fef5e122ff9e72814ae99fc9ccc1cee6fae354ab"
+  integrity sha512-Abm7zg/xBOddCrJQOp3YZbKXJSBq5NGA3+zwsclyZstfWliG+Autg4Idv2m2k/5fbF8GYpVQZRSYjYpa8y0Sxg==
 
 tinycolor2@^1.4.1:
   version "1.4.2"

@@ -76,7 +76,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "husky": "7.0.4",
-    "lint-staged": "10.5.4",
+    "lint-staged": "12.3.3",
     "netlify-plugin-cypress": "2.2.0",
     "prettier": "2.5.1",
     "start-server-and-test": "1.14.0"

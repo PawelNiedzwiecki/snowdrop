@@ -105,7 +105,7 @@ const About = ({ content }) => {
           animate={iControls}
         >
           <GatsbyImage
-            alt=""
+            alt="About me"
             image={frontmatter.image.childImageSharp.gatsbyImageData}
             className="about-author"
           />

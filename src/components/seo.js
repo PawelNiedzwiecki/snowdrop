@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import Context from '../context';
 
-import { lightTheme } from '../styles/theme';
+import { darkTheme, lightTheme } from '../styles/theme';
 
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -21,6 +22,9 @@ const SEO = ({ description, lang, meta, title }) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const { darkMode } = useContext(Context).state;
+
+  console.log(useContext(Context));
 
   return (
     <Helmet
@@ -68,11 +72,15 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `msapplication-TileColor`,
-          content: lightTheme.colors.primary,
+          content: darkMode
+            ? darkTheme.colors.primary
+            : lightTheme.colors.primary,
         },
         {
           name: `theme-color`,
-          content: lightTheme.colors.primary,
+          content: darkMode
+            ? darkTheme.colors.primary
+            : lightTheme.colors.primary,
         },
       ].concat(meta)}
     />

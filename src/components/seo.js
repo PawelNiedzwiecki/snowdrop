@@ -24,8 +24,6 @@ const SEO = ({ description, lang, meta, title }) => {
   const metaDescription = description || site.siteMetadata.description;
   const { darkMode } = useContext(Context).state;
 
-  console.log(useContext(Context));
-
   return (
     <Helmet
       htmlAttributes={{
@@ -73,14 +71,14 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           name: `msapplication-TileColor`,
           content: darkMode
-            ? darkTheme.colors.primary
+            ? darkTheme.colors.background
             : lightTheme.colors.primary,
         },
         {
           name: `theme-color`,
           content: darkMode
-            ? darkTheme.colors.primary
-            : lightTheme.colors.primary,
+            ? darkTheme.colors.background
+            : lightTheme.colors.background,
         },
       ].concat(meta)}
     />

@@ -2,12 +2,31 @@
 name: Build and Deploy to Netlify
 on:
   push:
+    branches: ['master']
   pull_request:
+    branches: ['master']
+
 jobs:
-  build:
-    runs-on: ubuntu-18.04
+  run-tests:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          build: npm run build
+          start: npm start
+      - name: Jest run
+        run: npm test:e2e:ci
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # ( Build to ./dist or other directory... )
 

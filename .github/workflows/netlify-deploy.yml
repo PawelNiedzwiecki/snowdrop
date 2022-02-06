@@ -17,10 +17,8 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
         with:
-          build: npm run build
-          start: npm start
-      - name: Jest run
-        run: npm test:e2e:ci
+          build: yarn run build
+          start: yarn start
 
   build:
     runs-on: ubuntu-latest

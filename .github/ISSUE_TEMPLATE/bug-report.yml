@@ -79,8 +79,8 @@ body:
     attributes:
       label: Requires product sign off?
       options:
-        - Yes
-        - No
+        - 'Yes'
+        - 'No'
   - type: textarea
     id: notes
     attributes:

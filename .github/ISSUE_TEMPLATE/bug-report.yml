@@ -1,0 +1,71 @@
+name: Bug Report
+description: Report a bug
+labels: ['NEW!']
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to help everyone identify and fix the bug
+  - type: dropdown
+    id: proposition
+    validations:
+      required: true
+    attributes:
+      label: 'Proposition?'
+      description: You may select one proposition.
+      options:
+        - Peacock
+        - NOW
+        - Showmax
+  - type: dropdown
+    id: territory
+    validations:
+      required: true
+    attributes:
+      multiple: true
+      label: 'Territory?'
+      description: You may select more than one.
+      options:
+        - GB
+        - IE
+        - IT
+        - AT
+        - DE
+  - type: dropdown
+    id: environment
+    validations:
+      required: true
+    attributes:
+      multiple: true
+      label: 'Environment?'
+      description: You may select one environment.
+      options:
+        - Stable-int
+        - Production
+  - type: textarea
+    id: description
+    attributes:
+      label: What is the actual behaviour?
+      placeholder: When I do this, that happens
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to page X
+        2. Click here
+        3. Click there
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What is the desired behaviour?
+      placeholder: I expected this to happen
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Additional notes/screenshots/recordings (optional)

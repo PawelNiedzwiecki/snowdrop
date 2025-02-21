@@ -5,9 +5,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the sections below. **Do not forget to add labels!**
+        Please fill out the sections below.
         > [!IMPORTANT]
-        > Do not forget to add labels!
+        > Do not forget to add specific labels!
+
+        Markdown styling info: [GitHub Documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings)
   - type: dropdown
     id: proposition
     validations:

@@ -1,6 +1,5 @@
 name: Ticket template
 description: Create a ticket to help us improve
-title: ' '
 labels: ['NEW!']
 body:
   - type: markdown

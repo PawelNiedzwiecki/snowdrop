@@ -1,11 +1,14 @@
-name: Bug Report
-description: Report a bug
+name: Ticket template
+description: Create a ticket to help us improve
+title: ' '
 labels: ['NEW!']
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the sections below to help everyone identify and fix the bug
+        Please fill out the sections below. **Do not forget to add labels!**
+        > [!IMPORTANT]
+        > Do not forget to add labels!
   - type: dropdown
     id: proposition
     validations:
@@ -20,48 +23,66 @@ body:
   - type: checkboxes
     id: territory
     attributes:
-      label: 'Territory?'
+      label: Territory?
       description: You may select more than one. This is required only when the proposition is NOW.
       options:
-        - label: GB
-        - label: IE
-        - label: IT
-        - label: AT
-        - label: DE
-  - type: dropdown
-    id: environment
+        - label: 🇬🇧 GB
+        - label: 🇮🇪 IE
+        - label: 🇮🇹 IT
+        - label: 🇦🇹 AT
+        - label: 🇩🇪 DE
+  - type: input
+    id: sip
+    attributes:
+      label: Related SIP (optional)
+      placeholder: Link to related SIP
+  - type: textarea
+    id: background
+    attributes:
+      label: Background (optional)
+      placeholder: A clear and concise description of what the feature is about.
+  - type: textarea
+    id: ask
+    attributes:
+      label: Ask
+      placeholder: What do you need from the team?
     validations:
       required: true
-    attributes:
-      multiple: true
-      label: 'Environment?'
-      description: You may select multiple environments.
-      options:
-        - Stable-int
-        - Production
   - type: textarea
-    id: description
+    id: story
     attributes:
-      label: What is the actual behaviour?
-      placeholder: When I do this, that happens
-    validations:
-      required: true
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to reproduce
+      label: User story
       placeholder: |
-        1. Go to page X
-        2. Click here
-        3. Click there
+        As a
+        I want to
+        So that
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: ac
     attributes:
-      label: What is the desired behaviour?
-      placeholder: I expected this to happen
+      label: Acceptance criteria
+      placeholder: |
+        Given
+        When
+        Then
+    validations:
+      required: true
+  - type: input
+    id: design
+    attributes:
+      label: Design link (optional)
+      placeholder: Link to design in Figma if applicable
+  - type: dropdown
+    id: signoff
+    validations:
+      required: true
+    attributes:
+      label: Requires product sign off?
+      options:
+        - Yes
+        - No
   - type: textarea
-    id: screenshots
+    id: notes
     attributes:
       label: Additional notes/screenshots/recordings (optional)

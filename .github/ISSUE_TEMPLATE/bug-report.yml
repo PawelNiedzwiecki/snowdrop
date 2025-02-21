@@ -2,7 +2,6 @@ name: Spike ticket
 title: 'Spike: '
 description: Create new Spike ticket
 labels: ['NEW!', 'Spike']
-type: Task
 projects: ['PawelNiedzwiecki/4']
 body:
   - type: markdown

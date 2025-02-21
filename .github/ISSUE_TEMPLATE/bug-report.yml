@@ -1,6 +1,7 @@
 name: Bug Report
 description: Report a bug
 labels: ['NEW!']
+type: Bug
 body:
   - type: markdown
     attributes:
@@ -17,20 +18,17 @@ body:
         - Peacock
         - NOW
         - Showmax
-  - type: dropdown
+  - type: checkboxes
     id: territory
-    validations:
-      required: true
     attributes:
-      multiple: true
       label: 'Territory?'
-      description: You may select more than one.
+      description: You may select more than one. This is required only when the proposition is NOW.
       options:
-        - GB
-        - IE
-        - IT
-        - AT
-        - DE
+        - label: GB
+        - label: IE
+        - label: IT
+        - label: AT
+        - label: DE
   - type: dropdown
     id: environment
     validations:
@@ -38,7 +36,7 @@ body:
     attributes:
       multiple: true
       label: 'Environment?'
-      description: You may select one environment.
+      description: You may select multiple environments.
       options:
         - Stable-int
         - Production

@@ -1,0 +1,51 @@
+name: Tech Ticket
+description: Create new Tech ticket
+labels: ['NEW!', 'Tech']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to help everyone understand the tech ticket.
+        Markdown styling info: [GitHub Documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings)
+
+        > [!IMPORTANT]
+        > Do not forget to add specific labels! This will help us to categorize the ticket and prioritize it accordingly.
+  - type: dropdown
+    id: proposition
+    attributes:
+      label: Proposition
+      description: You may select one proposition.
+      options:
+        - Peacock
+        - NOW
+        - Showmax
+        - SkyShowtime
+  - type: input
+    id: territory
+    validations:
+      required: true
+    attributes:
+      label: Territory
+      placeholder: 🇬🇧 GB, 🇮🇪 IE, 🇮🇹 IT, 🇦🇹 AT, 🇩🇪 DE  ...
+  - type: input
+    id: sip
+    attributes:
+      label: Related SIP
+      placeholder: Link to related SIP
+  - type: textarea
+    id: problem
+    validations:
+      required: true
+    attributes:
+      label: Problem
+      placeholder: What is the problem we're trying to solve?
+  - type: textarea
+    id: context
+    attributes:
+      label: Potential Solution
+      placeholder: What is the potential solution?
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes, dependencies or blockers
+      description: Any additional notes, dependencies or blockers that you want to share

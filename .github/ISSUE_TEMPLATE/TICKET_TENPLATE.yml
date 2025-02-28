@@ -1,7 +1,6 @@
 name: Ticket template
 description: Create a ticket to help us improve
 labels: ['NEW!']
-type: Feature
 body:
   - type: markdown
     attributes:

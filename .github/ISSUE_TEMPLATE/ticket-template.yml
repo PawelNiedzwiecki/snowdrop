@@ -10,18 +10,16 @@ body:
 
         > [!IMPORTANT]
         > Do not forget to add specific labels! This will help us to categorize the ticket and prioritize it accordingly.
-  - type: dropdown
+  - type: checkboxes
     id: proposition
-    validations:
-      required: true
     attributes:
       label: Proposition
-      description: You may select one proposition.
+      description: You may select proposition.
       options:
-        - Peacock
-        - NOW
-        - Showmax
-        - SkyShowtime
+        - label: Peacock
+        - label: NOW
+        - label: Showmax
+        - label: SkyShowtime
   - type: input
     id: territory
     attributes:
@@ -42,8 +40,6 @@ body:
     attributes:
       label: Ask
       placeholder: What do you need from the team?
-    validations:
-      required: true
   - type: textarea
     id: story
     attributes:
@@ -52,8 +48,6 @@ body:
         As a
         I want to
         So that
-    validations:
-      required: true
   - type: textarea
     id: ac
     attributes:
@@ -62,22 +56,11 @@ body:
         Given
         When
         Then
-    validations:
-      required: true
   - type: input
     id: design
     attributes:
       label: Design link (optional)
       placeholder: 🎨 Link to design in Figma if applicable
-  - type: dropdown
-    id: signoff
-    validations:
-      required: true
-    attributes:
-      label: Requires product sign off?
-      options:
-        - 'Yes'
-        - 'No'
   - type: textarea
     id: notes
     attributes:

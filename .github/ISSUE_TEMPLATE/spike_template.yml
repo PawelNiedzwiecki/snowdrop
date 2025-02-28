@@ -1,0 +1,32 @@
+name: Spike ticket
+title: 'Spike: '
+description: Create new Spike ticket
+labels: ['NEW!', 'Spike']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to help everyone understand the spike.
+        Markdown styling info: [GitHub Documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings)
+
+        > [!IMPORTANT]
+        > Do not forget to add specific labels! This will help us to categorize the ticket and prioritize it accordingly.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      placeholder: What's the general context of the spike
+  - type: textarea
+    id: context
+    attributes:
+      label: What we're looking for
+      placeholder: What we're looking for in this spike
+  - type: input
+    id: documentation
+    attributes:
+      label: Documentation link
+      placeholder: Link to the documentation if needed
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes

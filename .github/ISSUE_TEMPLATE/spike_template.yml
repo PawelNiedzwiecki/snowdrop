@@ -17,7 +17,7 @@ body:
       label: Context
       placeholder: What's the general context of the spike
   - type: textarea
-    id: issue
+    id: testissue
     attributes:
       label: What we're looking for
       placeholder: What we're looking for in this spike
